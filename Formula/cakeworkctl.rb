@@ -5,20 +5,20 @@
 class Cakeworkctl < Formula
   desc "CLI for cakework."
   homepage "https://github.com/usecakework/homebrew-cakeworkctl"
-  version "1.0.42"
+  version "1.0.43"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.42/cakeworkctl_1.0.42_Darwin_x86_64.tar.gz"
-      sha256 "f7e12c67ce5659e3d0d112e1bf75836e079edd9122fb80cffdf2a6f1e9461a69"
+      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.43/cakeworkctl_1.0.43_Darwin_x86_64.tar.gz"
+      sha256 "2b5ee9d521e519c7c85e5d73649e029128accebd10a20347171560e937797e44"
 
       def install
         bin.install "cakework"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.42/cakeworkctl_1.0.42_Darwin_arm64.tar.gz"
-      sha256 "52171f331eda95ee4a01493586245ccc5cd21b3ecb76a38a677d00f11ab5bdf6"
+      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.43/cakeworkctl_1.0.43_Darwin_arm64.tar.gz"
+      sha256 "a148a601832e282d5f4270f55b19dfd96c19881af99203657cec80a744d7e406"
 
       def install
         bin.install "cakework"
@@ -27,17 +27,17 @@ class Cakeworkctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.42/cakeworkctl_1.0.42_Linux_x86_64.tar.gz"
-      sha256 "1c451aa43350693da6293a3eca4cbf6a89842f92c428d901973e98c5b20f74c6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.43/cakeworkctl_1.0.43_Linux_arm64.tar.gz"
+      sha256 "fcbf24ea8edb309ef20599f44761d4eb5671987f0855d3a84c9e19bd7c3608a9"
 
       def install
         bin.install "cakework"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.42/cakeworkctl_1.0.42_Linux_arm64.tar.gz"
-      sha256 "91ce041b9e0c22a70a71dccfd4ba3f694ad1e1bddabf813bf85376e15348f08c"
+    if Hardware::CPU.intel?
+      url "https://github.com/usecakework/cakeworkctl/releases/download/v1.0.43/cakeworkctl_1.0.43_Linux_x86_64.tar.gz"
+      sha256 "0c7e65cbab51a042c1d1608e266dda231c2ae4594582614fcb3a11a7159fdab9"
 
       def install
         bin.install "cakework"
